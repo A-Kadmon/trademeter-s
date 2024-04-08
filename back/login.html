@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+  	<link rel='stylesheet' href='/css/styles.css'>
+    <style>
+        .login-cont{
+            width: 100vw;
+            height: 100vh;
+        }
+        .profile-img-card{
+            width: 100px;
+        }
+        .inner-cont{
+            padding: 32px 16px 16px;
+            border: #ccc 4px solid;
+        }
+    </style>
+</head>
+<body>
+<div class="login-cont cont df a5">
+    <div class="inner-cont dfcc a2 gap">
+        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+        <p id="profile-name" class="profile-name-card"><span id="login__error">
+                <?php flash(); ?>
+            </span></p>
+        <form class="form-signin dfc gap" action="/admin/" method="post">
+            <span id="reauth-email" class="reauth-email"></span>
+            <input name="username" id="username" class="form-control" placeholder="Имя" required autofocus>
+            <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Пароль" required>
+            <div id="remember" class="checkbox">
+                <label>
+                    <input type="checkbox" value="remember-me"> Запомнить
+                </label>
+            </div>
+            <input type="hidden" name="enter" value="0">
+            <input type="hidden" name="enter" value="1">
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Войти</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
