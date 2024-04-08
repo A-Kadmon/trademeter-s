@@ -1,0 +1,40 @@
+$border-radius: 6px;
+
+$color-blue: #4859b4; //#007BFF; //
+$color-dark-blue: #273a8c;
+
+$color1: #4859b4; //#4859b4
+$color1-light: #05A5FF;
+
+$color2: #dcae1d;
+$color2-light: #FF4874;
+
+$color-gray: #808080;
+$color-white: #fff;
+$color-black: #212529;
+
+$mobile-point: 1200px;
+$mobile-padding: 16px;
+
+$cont-width: 1130px;
+
+//spacings
+$spacings: (
+  //-1: 4px,
+        0: 0,
+        16: 16px,
+        32: 32px
+);
+
+//text font sizes
+$font-sizes: (
+        -1: 13px,
+        1: 18px,
+        2: 29px,
+        3: 34px,
+        4: 48px
+);
+
+
+//gap
+$gap: 16px;

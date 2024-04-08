@@ -1,0 +1,391 @@
+@use 'short-normalize.css';
+
+@import 'vars.scss';
+
+@media (max-width: 480px) {
+  .xs-o {
+    display: none !important;
+  }
+}
+
+@media (min-width: 480px) {
+  .sm-o {
+    display: none !important;
+  }
+}
+
+
+html {
+  font-size: 18px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul.marker {
+  list-style-type: initial;
+}
+
+//text
+.bold {
+  font-weight: bold;
+}
+
+//text align
+
+.tal {
+  text-align: left
+}
+
+.tar {
+  text-align: right
+}
+
+.tac {
+  text-align: center
+}
+
+//text font sizes
+@each $num, $size in $font-sizes {
+  .tfs#{$num} {
+    font-size: $size;
+  }
+}
+
+// Text color classes
+.tfc1 {
+  color: $color1;
+}
+
+.tfc1-light {
+  color: $color1-light;
+}
+
+.tfc2 {
+  color: $color2;
+}
+
+.tfc2-light {
+  color: $color2-light;
+}
+
+.tfc-g {
+  color: $color-gray;
+}
+
+.tfc-w {
+  color: $color-white;
+}
+
+.tfc-b {
+  color: $color-black;
+}
+
+// Background color classes
+.bcc1 {
+  background-color: $color1;
+}
+
+.bcc1-light {
+  background-color: $color1-light;
+}
+
+.bcc2 {
+  background-color: $color2;
+}
+
+.bcc2-light {
+  background-color: $color2-light;
+}
+
+.bcc-g {
+  background-color: $color-gray;
+}
+
+.bcc-w {
+  background-color: $color-white;
+}
+
+.bcc-b {
+  background-color: $color-black;
+}
+
+// Border color classes
+.brc1 {
+  border-color: $color1;
+}
+
+.brc1-light {
+  border-color: $color1-light;
+}
+
+.brc2 {
+  border-color: $color2;
+}
+
+.brc2-light {
+  border-color: $color2-light;
+}
+
+.brc-g {
+  border-color: $color-gray;
+}
+
+.brc-w {
+  border-color: $color-white;
+}
+
+.brc-b {
+  border-color: $color-black;
+}
+
+
+//spacings
+@each $num, $spacing in $spacings {
+  .pd#{$num} {
+    padding: $spacing;
+  }
+  .gap#{$num} {
+    gap: $spacing;
+    --gap: #{$spacing};
+  }
+  .mrh#{$num} {
+    margin: 0 $spacing;
+  }
+  .mrv#{$num} {
+    margin: $spacing 0;
+  }
+  .mrb#{$num} {
+    margin: 0 0 $spacing;
+  }
+}
+
+.gap{ gap:var(--gap)}
+
+
+//margins
+.mrt0 {
+  margin-top: 0
+}
+
+.mrb0 {
+  margin-bottom: 0
+}
+
+// мои выравниватели
+.pa {
+  position: absolute;
+}
+
+.pr {
+  position: relative;
+}
+
+.df {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dfc {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.dfcc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ais {
+  align-items: stretch;
+}
+
+.aic {
+  align-items: center;
+}
+// align flex helpers for absolut positions ( container )
+.a1 {
+  place-content: start;
+}
+
+.a2 {
+  place-content: start center;
+  text-align: center;
+}
+
+.a3 {
+  place-content: start end;
+}
+
+.a4 {
+  place-content: center start;
+  align-items: center;
+}
+
+.a5 {
+  place-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.a6 {
+  place-content: center end;
+  align-items: center;
+  text-align: end;
+}
+
+.a7 {
+  place-content: end start;
+  align-items: end;
+}
+
+.a8 {
+  place-content: end center;
+  align-items: end;
+  text-align: center;
+}
+
+.a9 {
+  place-content: end;
+  align-items: end;
+  text-align: end;
+}
+
+/*.a1 { place-content: start; }
+.a2 { place-content: start center; }
+.a3 { place-content: start end; }
+.a4 { place-content: center start; }
+.a5 { place-content: center; }
+.a6 { place-content: center end; }
+.a7 { place-content: end start; }
+.a8 { place-content: end center; }
+.a9 { place-content: end; }*/
+
+.adh {
+  place-content: center space-between;
+  align-items: center;
+}
+
+// align helpers for absolut positions ( self )
+.aa1 {
+  top: 0;
+  left: 0;
+}
+
+.aa2 {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.aa3 {
+  top: 0;
+  right: 0;
+}
+
+.aa4 {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.aa5 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.aa6 {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.aa7 {
+  bottom: 0;
+  left: 0;
+}
+
+.aa8 {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.aa9 {
+  bottom: 0;
+  right: 0;
+}
+
+
+// w h
+
+.w100, wf {
+  width: 100%;
+}
+
+.f1 {
+  flex: 1;
+}
+
+.f1all>*{
+  flex: 1;
+}
+
+.hdn{
+  display: none;
+}
+
+body {
+  color: #333;
+  padding: $mobile-padding;
+  overflow-x: hidden;
+}
+
+@media(min-width: $mobile-point) {
+
+  body {
+    padding: 0;
+  }
+
+  // cols
+ //@for $num from 1 through 11 {
+ //   .c#{$num}, .col-#{$num} {
+ //     width: calc((100% / 12 * $num) - var(--gap, 0px) / 2);
+ //    }
+
+
+}
+
+// мои стилайзинги
+a {
+  color: $color1;
+  text-decoration: none;
+}
+
+input:disabled {
+  color: #ccc;
+}
+
+button {
+  color: #333;
+  background-color: #f4f4f4;
+  outline: none;
+}
+
+button:disabled {
+  color: #999;
+}
+
+button:not(:disabled):active {
+  background-color: #ddd;
+}
+
+button:focus {
+  border-color: #666;
+}
+
+

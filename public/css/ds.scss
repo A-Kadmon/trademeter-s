@@ -1,0 +1,166 @@
+@use 'range.scss';
+@import 'service.scss';
+@import 'vars.scss';
+@import "tooltips";
+
+i{
+  font-style: normal;
+}
+
+.gap>p{
+  margin: 0;
+  width: 100%;
+}
+:root{
+ --gap: 16px;
+}
+/**
+* Container
+*/
+.cont,
+.cont-fluid {
+  width: 100%;
+  margin: 0 auto;
+
+}
+section.cont, section.cont-fluid{
+  margin-bottom: $gap;
+}
+
+/*.cont {
+  max-width: $cont-width;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+}*/
+
+@media (min-width: $mobile-point) {
+  .cont {
+    max-width: $cont-width;
+  }
+}
+
+/**
+* Grid
+* Minimal grid system with auto-layout columns
+*/
+.grid {
+  grid-column-gap: var(--gap);
+  grid-row-gap: var(--gap);
+  display: grid;
+  grid-template-columns: 1fr;
+  //margin: 0;
+}
+@media (min-width: $mobile-point) {
+  .grid { grid-template-columns: repeat(auto-fit, minmax(0%, 1fr)); }
+
+  .gcs2{ grid-template-columns: repeat(2, minmax(0%, 1fr));}
+  .gcs3{ grid-template-columns: repeat(3, minmax(0%, 1fr));}
+  .gcs4{ grid-template-columns: repeat(4, minmax(0%, 1fr));}
+  .gcs5{ grid-template-columns: repeat(5, minmax(0%, 1fr));}
+  .gcs6{ grid-template-columns: repeat(6, minmax(0%, 1fr));}
+  .gcs12{ grid-template-columns: repeat(12, minmax(0%, 1fr));}
+
+  .gc2{ grid-column: span 2; }
+  .gc3{ grid-column: span 3; }
+  .gc4{ grid-column: span 4; }
+  .gc5{ grid-column: span 5; }
+  .gc6{ grid-column: span 6; }
+}
+/*.grid > * {
+  min-width: 0;
+}*/
+
+/**
+ * Loading ([aria-busy=true])
+ */
+[aria-busy=true] {
+  cursor: progress;
+}
+
+[aria-busy=true]:not(input, select, textarea, body)::before {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 0.1875em solid currentColor;
+  border-radius: 1em;
+  border-right-color: transparent;
+  content: "";
+  vertical-align: text-bottom;
+  vertical-align: -0.125em;
+  animation: spinner 0.75s linear infinite;
+  opacity: .5;
+}
+[aria-busy=true]:not(input, select, textarea, body):not(:empty)::before { //select,
+  margin-right: calc(var(--gap) * 0.5);
+  margin-left: 0;
+  -webkit-margin-start: 0;
+  margin-inline-start: 0;
+  -webkit-margin-end: calc(var(--gap) * 0.5);
+  margin-inline-end: calc(var(--gap) * 0.5);
+}
+[aria-busy=true]:not(input, select, textarea):empty {
+  text-align: center;
+}
+
+label[aria-busy=true]::before{
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  color: #666;
+}
+
+[aria-busy=true]:is(a, button, input), label[aria-busy=true]>:is(input, select)
+{
+  pointer-events: none;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body[aria-busy=true] :is(a, input, button, select){
+  cursor: progress;
+  pointer-events: none;
+}
+
+
+//input stilize
+button,
+input,
+select,
+textarea {
+  border: 1px solid $color-gray;
+  border-radius: 2px;
+  padding: 8px;
+  transition: all .3s;
+}
+
+input:not([type=checkbox], [type=radio], [type=range], [type=file]),
+select,
+textarea {
+  appearance: none;
+  width: 100%;
+}
+
+:is(button, input, select):hover{
+  border-color: $color1;
+}
+:is(select, input):focus-visible {
+  outline: none;
+}
+:is(button, input, select):focus{
+  box-shadow: 0 0 0 2px #7d8acb;
+}
+
+.hov{
+  opacity: .7;
+  cursor: pointer;
+  transition: opacity .3s;
+}
+
+.hov:hover{
+opacity: 1;
+}

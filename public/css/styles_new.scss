@@ -1,0 +1,158 @@
+@import 'service.scss';
+
+@font-face {
+  font-family: 'F77 Minecraft';
+  src: local('F77 Minecraft'),
+  url('/assets/fnts/F77 Minecraft.ttf');
+}
+
+@font-face {
+  font-family: 'BarcadeBrawlRegular';
+  src: local('BarcadeBrawlRegular'),
+  url('/assets/fnts/BarcadeBrawlRegular.ttf');
+}
+
+$font1-montserat: Montserrat, sans-serif;
+$font2-minecraft: 'F77 Minecraft', sans-serif;
+$font3-barcade: "BarcadeBrawlRegular", sans-serif;
+
+$font1: $font1-montserat;
+$font2: $font2-minecraft;
+$font3: $font3-barcade;
+
+$gap1: 8px;
+$gap2: 16px;
+$gap3: 24px;
+$gap4: 32px;
+
+
+/*  */
+
+a{
+  text-decoration: none;
+  //border-bottom: 1px solid $color1;
+}
+
+a.dot{
+  text-decoration: none;
+  border-bottom: 1px dashed $color1;
+}
+
+a.noline{
+  border-bottom: none;
+  text-decoration: none;
+}
+
+a.noline{
+  border-bottom: none;
+  text-decoration: none;
+}
+
+.inaline a{
+  //border-bottom: none;
+  text-decoration: underline;
+}
+
+.fnt1{
+  font-family: $font1-montserat;
+}
+
+.fnt2{
+  font-family: $font2-minecraft;
+}
+
+.fnt3{
+  font-family: $font3-barcade;
+}
+
+.mrt3{
+  margin-top: $gap3;
+}
+
+.mr3{
+  margin: $gap3;
+}
+
+/*  */
+
+html{
+  //padding: 16px;
+  font-family: $font1-montserat;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+p {
+  margin: 8px 0;
+}
+
+/* TEMP */
+
+a:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+/* TEMP */
+.btn-new{
+
+  text-decoration: none;
+
+  font-family: $font2-minecraft;
+  line-height: 16px;
+
+  background: $color1;
+  color: #fff;
+
+  transition: .6s;
+
+  padding: 14px 28px;
+
+  //border-radius: 0;
+
+  &:focus{
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 50%);
+  }
+
+}
+
+
+/* TEMP */
+.btn-outline-new{
+  border: 2px solid $color1;
+  background: none;
+
+  &:hover{
+    color: #fff;
+    background-color: #0069d9;
+  }
+}
+
+.box{
+  padding: $gap3;
+  display: flex;
+  width: 100%;
+  background: #EBEBEB;
+}
+
+.section{
+  margin-top: 56px;
+  margin-bottom: 56px;
+}
+
+//h p
+h1, h2, h3{
+  font-family: $font3;
+}
+h1, h2.big{
+  font-size: 24px;
+  line-height: 32px;
+  margin: 54px 0;
+}
+
+h2{
+  font-size: 14px;
+  line-height: 24px;
+  margin: 24px 0;
+}
+
